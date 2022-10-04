@@ -49,6 +49,7 @@ func teste(mensagem string) string {
 	// eliminando a quebra de parágrafo e de linha
 	msg := mensagem[0:(len(mensagem) - 2)]
 	switch msg {
+
 	case "1":
 		fmt.Println("R$ 10,00")
 		return "R$ 10,00"
@@ -77,9 +78,14 @@ func teste(mensagem string) string {
 		fmt.Println("62,00")
 		return "R$ 62,00"
 	case "10":
-		fmt.Println("65,00")
-		return "R$ 65,00"
+		fmt.Println("R$ 100,00")
+		return "R$ 100,00"
+	case "0":
+		fmt.Println("saindo...")
+		os.Exit(0)
+		return "saindo..."
 	default:
+		fmt.Println("valor não indentificado")
 		return "Não identificado"
 
 	}

@@ -59,7 +59,29 @@ func conexaoCliente() {
 	}
 }
 
+type vertex struct {
+	dia int
+	mes int
+	ano int
+}
+
+func routine(str string) {
+	for i := 0; i < 1; i++ {
+		time.Sleep(1 * time.Second)
+		fmt.Println(str)
+	}
+}
 func main() {
+
+	routine("Seja bem vidno ao Cardapio 51")
+
+	go routine("Siga os produtos a seguir")
+
+	fmt.Println(vertex{
+		dia: 0,
+		mes: 00,
+		ano: 000,
+	})
 
 	conexaoCliente()
 
