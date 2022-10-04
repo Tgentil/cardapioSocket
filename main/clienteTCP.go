@@ -60,9 +60,11 @@ func conexaoCliente() {
 }
 
 type vertex struct {
-	dia int
-	mes int
-	ano int
+	dia  int
+	spc  string
+	mes  int
+	spc2 string
+	ano  int
 }
 
 func routine(str string) {
@@ -78,9 +80,11 @@ func main() {
 	go routine("Siga os produtos a seguir")
 
 	fmt.Println(vertex{
-		dia: 0,
-		mes: 00,
-		ano: 000,
+		dia:  03,
+		spc:  "/",
+		mes:  10,
+		spc2: "/",
+		ano:  2022,
 	})
 
 	conexaoCliente()
