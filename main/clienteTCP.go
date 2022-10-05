@@ -27,7 +27,6 @@ func conexaoCliente() {
 
 		for {
 			fmt.Println("Por favor, informe o número da bebida que você deseja consultar o valor :\n" +
-				"siga os produtos a seguir" +
 				"1: Cachaça\n" +
 				"2: Cerveja\n" +
 				"3: Champanhe\n" +
