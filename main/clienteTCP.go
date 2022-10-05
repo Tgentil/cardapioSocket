@@ -71,6 +71,7 @@ type vertex struct {
 	mes      int
 	spc2     string
 	ano      int
+	spc3     string
 }
 
 //routines
@@ -83,15 +84,16 @@ func routine(str string) {
 }
 func main() {
 
-	routine("Seja bem vindo ao Cardapio 51")
+	routine("Seja bem vindo ao Cardapio 51 \n")
 
 	fmt.Println(vertex{
-		mensagem: "Data de criaçao do Cardapio 51 : \n",
+		mensagem: "\n Data de criaçao do Cardapio 51 : \n",
 		dia:      03,
 		spc:      "/",
 		mes:      10,
 		spc2:     "/",
 		ano:      2022,
+		spc3:     "\n",
 	})
 
 	// Tempo de espera para o cardapio ser lançado no terminado do cliente

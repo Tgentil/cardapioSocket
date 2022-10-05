@@ -51,40 +51,63 @@ func teste(mensagem string) string {
 	switch msg {
 
 	case "1":
+
 		fmt.Println("R$ 10,00")
 		return "R$ 10,00"
+
 	case "2":
+
 		fmt.Println("R$ 15,00")
 		return "R$ 15,00"
+
 	case "3":
+
 		fmt.Println("R$ 18,00")
 		return "R$ 18,00"
+
 	case "4":
+
 		fmt.Println("R$ 30,00")
 		return "R$ 30,00"
+
 	case "5":
+
 		fmt.Println("R$ 35,00")
 		return "R$ 35,00"
+
 	case "6":
+
 		fmt.Println("R$ 37,00")
 		return "R$ 37,00"
+
 	case "7":
+
 		fmt.Println("R$ 55,00")
 		return "R$ 55,00"
+
 	case "8":
+
 		fmt.Println("R$ 60,00")
 		return "R$ 60,00"
+
 	case "9":
+
 		fmt.Println("62,00")
 		return "R$ 62,00"
+
 	case "10":
+
 		fmt.Println("R$ 100,00")
 		return "R$ 100,00"
+
 	case "0":
+
 		fmt.Println("saindo...")
 		os.Exit(0)
 		return "saindo..."
+
 	default:
+
 		fmt.Println("valor não indentificado")
 		return "Não identificado"
 
