@@ -9,7 +9,9 @@ import (
 )
 
 func conexaoCliente() {
-	// conectando na porta 3030 via protocolo tcp/ip na máquina local
+
+	// conectando na porta 8081 via protocolo tcp/ip na máquina local
+
 	conexao, erro1 := net.Dial("tcp", "127.0.0.1:8081")
 	if erro1 != nil {
 		fmt.Println(erro1)
@@ -25,6 +27,7 @@ func conexaoCliente() {
 
 		for {
 			fmt.Println("Por favor, informe o número da bebida que você deseja consultar o valor :\n" +
+				"siga os produtos a seguir" +
 				"1: Cachaça\n" +
 				"2: Cerveja\n" +
 				"3: Champanhe\n" +
@@ -47,12 +50,15 @@ func conexaoCliente() {
 			fmt.Fprintf(conexao, texto+"\n")
 
 			// ouvindo a resposta do servidor (eco)
+
 			mensagem, err3 := bufio.NewReader(conexao).ReadString('\n')
 			if err3 != nil {
 				fmt.Println(err3)
 				os.Exit(3)
 			}
+
 			// escrevendo a resposta do servidor no terminal
+
 			fmt.Print("Resposta do servidor: " + mensagem)
 			time.Sleep(time.Second * 2)
 		}
@@ -60,12 +66,15 @@ func conexaoCliente() {
 }
 
 type vertex struct {
-	dia  int
-	spc  string
-	mes  int
-	spc2 string
-	ano  int
+	mensagem string
+	dia      int
+	spc      string
+	mes      int
+	spc2     string
+	ano      int
 }
+
+//routines
 
 func routine(str string) {
 	for i := 0; i < 1; i++ {
@@ -75,17 +84,20 @@ func routine(str string) {
 }
 func main() {
 
-	routine("Seja bem vidno ao Cardapio 51")
-
-	go routine("Siga os produtos a seguir")
+	routine("Seja bem vindo ao Cardapio 51")
 
 	fmt.Println(vertex{
-		dia:  03,
-		spc:  "/",
-		mes:  10,
-		spc2: "/",
-		ano:  2022,
+		mensagem: "Data de criaçao do Cardapio 51 : \n",
+		dia:      03,
+		spc:      "/",
+		mes:      10,
+		spc2:     "/",
+		ano:      2022,
 	})
+
+	// Tempo de espera para o cardapio ser lançado no terminado do cliente
+
+	time.Sleep(2 * time.Second)
 
 	conexaoCliente()
 
