@@ -20,6 +20,7 @@ func conexaoCliente() {
 
 	defer conexao.Close()
 
+	// separando os itens do cardapio
 	requisicoes := 11
 
 	for i := 0; i <= requisicoes; i++ {
@@ -64,6 +65,7 @@ func conexaoCliente() {
 	}
 }
 
+// define o tippo das variaveis da data de criação do cardapio
 type vertex struct {
 	mensagem string
 	dia      int
@@ -84,8 +86,11 @@ func routine(str string) {
 }
 func main() {
 
+	// boas vindas
+
 	routine("Seja bem vindo ao Cardapio 51 \n")
 
+	// data de criação
 	fmt.Println(vertex{
 		mensagem: "\n Data de criaçao do Cardapio 51 : \n",
 		dia:      03,
@@ -100,6 +105,7 @@ func main() {
 
 	time.Sleep(2 * time.Second)
 
+	// chama a primeira função novamente
 	conexaoCliente()
 
 }

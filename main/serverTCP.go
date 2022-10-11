@@ -9,6 +9,7 @@ import (
 
 func conexaoServidor() {
 
+	// iniciando a conexão tcp
 	fmt.Println("Servidor aguardando conexões...")
 
 	ln, erro1 := net.Listen("tcp", ":8081")
@@ -18,18 +19,19 @@ func conexaoServidor() {
 		os.Exit(3)
 	}
 
-	// aceitando conexões
+	// aguarde de conexão do cliente
 	conexao, erro2 := ln.Accept()
 	if erro2 != nil {
 		fmt.Println(erro2)
 		os.Exit(3)
 	}
 
-	defer ln.Close()
+	defer ln.Close() // fecha a conexão no fim
 
 	fmt.Println("Conexão aceita...")
 
-	for {
+	for { // Laço eterno
+		// Recebe informações no buffer de leitura
 
 		mensagem, erro3 := bufio.NewReader(conexao).ReadString('\n')
 		if erro3 != nil {
@@ -48,6 +50,7 @@ func conexaoServidor() {
 func teste(mensagem string) string {
 	// eliminando a quebra de parágrafo e de linha
 	msg := mensagem[0:(len(mensagem) - 2)]
+	// itens do cardapio
 	switch msg {
 
 	case "1":
@@ -115,6 +118,7 @@ func teste(mensagem string) string {
 
 }
 
+// chama a função de conexão
 func main() {
 	conexaoServidor()
 }
